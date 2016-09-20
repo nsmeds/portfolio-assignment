@@ -1,0 +1,51 @@
+body {
+  background-color: #c6e2ff;
+  line-height: 1.5;
+  font-size: 100%;
+}
+
+hr {
+  margin: 1em;
+  width: 80%;
+}
+
+.heading-one {
+  font-family: 'Lobster', cursive;
+  font-size: 36px;
+}
+
+.main-nav ul li {
+  font-family: 'Lobster', cursive;
+  font-size: 22px;
+}
+
+a, a:link, a:active {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a:hover, a:focus {
+  color: #9eb4cc;
+}
+
+a:visited {
+  color: #768799;
+}
+
+@media only screen and (min-width: 320px) {
+  .icon-menu::before {
+    float: left;
+    width: 5%;
+    margin-top: 8%;
+    font-size: 26px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .icon-menu::before {
+    float: left;
+    width: 5%;
+    margin-top: 8%;
+    font-size: 65px;
+  }
+}

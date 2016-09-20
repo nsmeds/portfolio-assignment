@@ -1,0 +1,64 @@
+.site-header {
+  background: #	#e2ffc6;
+}
+
+.heading-one {
+  float: left;
+  padding: 0 0 .2em 1em;
+  width: 90%;
+}
+
+.icon-menu::before {
+  float: right;
+  width: 10%;
+}
+
+.main-nav {
+  padding: 0.1em;
+}
+
+.main-nav ul {
+  display: none;
+  padding: 0;
+  list-style: none;
+  clear: both;
+}
+
+.main-nav:hover ul {
+  display: block;
+}
+
+.main-nav li {
+  margin-right: .4em;
+  font-size: 1.5em;
+  padding: .5em .2em;
+  border-bottom: 1px solid #ffffff;
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .icon-menu {
+    display: none;
+  }
+
+  .main-nav ul {
+    float: right;
+    display: inline-block;
+    padding: 0px 5px 0px 5px;
+    list-style: none;
+    clear: both;
+  }
+
+  .main-nav li:hover {
+    background-color:	#ffe3c6;
+  }
+
+  .main-nav li {
+    display: inline-block;
+    margin-right: .4em;
+    font-size: 1.5em;
+    padding: 1em .5em;
+    border-bottom: 1px solid #ffffff;
+  }
+
+}

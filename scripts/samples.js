@@ -1,37 +1,30 @@
 var samples = [];
 
 function Article (opts) {
+  this.author = opts.author;
+  this.authorUrl = opts.authorUrl;
   this.title = opts.title;
   this.cateogry = opts.category;
-  this.publication = opts.publication;
   this.body = opts.body;
+  this.publishedOn = opts.publishedOn;
 }
 
-var firstArticle = myLocalData[0];
-new Article(firstArticle);
-
 Article.prototype.toHtml = function() {
-  var $newArticle = $('article.template').clone();
+  var $source = $('#article-template').html();
+  var template = Handlebars.compile($source);
 
-  $newArticle.find('header h1').text(this.title);
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+  this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
 
-  $newArticle.attr('data-category', this.category);
-
-  $newArticle.find('time[pubdate]').attr('title', this.publishedOn);
-  $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
-
-  $newArticle.find('.article-body').html(this.body);
-
-  $newArticle.removeClass('template');
-
-  return $newArticle;
+  var html = template(this);
+  return html;
 };
 
-myLocalData.sort(function(curElem, nextElem) {
-  return (new Date(nextElem.publication)) - (new Date(curElem.publication));
+myLocalData.sort(function(a,b) {
+  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
-myLocalData.forEach(function(ele) {
+myLocalData.forEach(function(a,b) {
   samples.push(new Article(ele));
 });
 

@@ -35,10 +35,27 @@
   border-bottom: 1px solid #ffffff;
 }
 
+#filter {
+  padding: 0;
+  list-style: none;
+}
+
 .template {
   display: none;
 }
 
+#samples {
+  padding: 1rem;
+}
+
+.byline {
+  color: #777;
+}
+
+.byline a {
+  font-weight: bold;
+  text-decoration: none;
+}
 
 @media only screen and (min-width: 1024px) {
   .icon-menu {

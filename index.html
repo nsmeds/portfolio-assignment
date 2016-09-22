@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
+    <script id="article-template" type="text/x-handlebars-template">
+      <article class="clearfix" data-category="{{data-category}}">
+        <header>
+          <h1>{{title}}</h1>
+          <div class="byline">
+            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            {{publishStatus}}
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+        <a href="" class="read-on">Read on &rarr;</a>
+      </article>
+    </script>
   </head>
   <body>
     <header class="site-header clearfix">
@@ -17,6 +30,7 @@
         <h1>representation = important</h1>
       </section>
       <nav class="main-nav">
+        <!--Hamburger menu-->
         <div class="icon-list"></div>
         <ul>
           <li class="tab"><a href="" class="icon-number">About</a></li>
@@ -30,17 +44,36 @@
       </nav>
     </header>
     <main>
-      <section id="samples">
-        <article class="template" data-category="cat">
-          <header>
-              <h1>Title</h1>
-              <div class="byline">
-                published <time pubdate datetime="1970-01-01">Publish Time</time>
-              </div>
-            </header>
-          <section class="article-body"></section>
-        </article>
+      <section id="samples" class="tab-content">
+        <div>
+          <ul id="filter">
+            <li>
+              <select id="category-filter">
+                <option value="">Filter by Category</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="about" class="tab-content">
+        <header>
+          Welcome to my portfolio
+        </header>
+        <section>
+          <h1>Some of my interests include:</h1>
+          <ul>
+            <li>Coding</li>
+            <li>Social impact research</li>
+            <li>Educational psychology</li>
+            <li>Everything outdoors</li>
+          </ul>
+        </section>
+      </section>
     </main>
+    <footer>
+      &copy; 2016 Caitlin M Araldi | Representation Matters
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="scripts/writingSamples.js"></script>
     <script src="scripts/samples.js"></script>

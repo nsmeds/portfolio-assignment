@@ -1,6 +1,7 @@
 body {
   background-color: #c6e2ff;
   line-height: 1.5;
+  font-family: 'Raleway', sans-serif;
   font-size: 100%;
 }
 
@@ -12,11 +13,6 @@ hr {
 .heading-one {
   font-family: 'Lobster', cursive;
   font-size: 36px;
-}
-
-.main-nav ul li {
-  font-family: 'Lobster', cursive;
-  font-size: 22px;
 }
 
 a, a:link, a:active {

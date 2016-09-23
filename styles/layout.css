@@ -4,7 +4,7 @@
   clear: both;
 }
 
-.heading-one {
+.header-one {
   max-width: 80%;
 }
 
@@ -14,7 +14,7 @@
 }
 
 @media only screen and (min-width: 640px) {
-  .heading-one {
+  .header-one {
     padding: .1em .1em .1em 2em;
     float: none;
   }

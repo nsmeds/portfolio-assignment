@@ -1,5 +1,5 @@
 body {
-  background-color: #c6e2ff;
+  background-color: #ffdada;
   line-height: 1.5;
   font-family: 'Raleway', sans-serif;
   font-size: 100%;
@@ -10,9 +10,14 @@ hr {
   width: 80%;
 }
 
-.heading-one {
+.header-one {
   font-family: 'Lobster', cursive;
   font-size: 36px;
+}
+
+div .tab-menu {
+  display: block;
+  float:right;
 }
 
 a, a:link, a:active {
@@ -21,7 +26,7 @@ a, a:link, a:active {
 }
 
 a:hover, a:focus {
-  color: #9eb4cc;
+  color: #ffe1e1;
 }
 
 a:visited {

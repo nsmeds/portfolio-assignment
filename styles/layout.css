@@ -1,11 +1,29 @@
-.heading-one {
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header-one {
   max-width: 80%;
 }
 
+#filter select {
+  width: 90%;
+  margin: .2em 5%;
+}
+
 @media only screen and (min-width: 640px) {
-  .heading-one {
+  .header-one {
     padding: .1em .1em .1em 2em;
     float: none;
   }
-
+  #filter select {
+    width: 15em;
+    margin: .2em .2em;
+  }
+  #filter li {
+    width: 20em;
+    display: inline;
+  }
 }

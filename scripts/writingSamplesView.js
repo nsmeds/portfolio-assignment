@@ -1,8 +1,16 @@
+'use strict';
+
+// Configure articleView to hold all functions for dynamic updates and article-related event handlers
 var articleView = {};
 
 articleView.populateFilters = function() {
   $('article').not('template').each(function() {
-    var category, optionTag;
+    var authorName, category, optionTag;
+
+    authorName = $(this).find('address a').text();
+    optionTag = '<option value="' + authorName + '">' + authorName + '<option>';
+    $('#author-filter').append(optionTag);
+
     category = $(this).attr('data-category');
     optionTag = '<option value"' + category + '">' + category + '</option>';
 
@@ -12,11 +20,26 @@ articleView.populateFilters = function() {
   });
 };
 
+articleView.handleAuthorFilter = function() {
+  $('author-filter').on('change', function() {
+    var $selectedAuthor = $(this).val();
+    if ($selectedAuthor) {
+      var $samples = $('#samples', 'article');
+      $samples.each(function() {
+        $(this).hide();
+        if (selectedValue === $(this).attr('data-category')) {
+          $(this).fadeIn('slow');
+        }
+      });
+    }
+  });
+};
+
 articleView.handleCategoryFilter = function() {
   $('#category-filter').on('change', function() {
     var selectedValue = $(this).val();
     if (selectedValue) {
-      var $samples = $('#samples article');
+      var $samples = $('#samples', 'article');
       $samples.each(function() {
         $(this).hide();
         if (selectedValue === $(this).attr('data-category')) {
@@ -34,12 +57,16 @@ articleView.handleCategoryFilter = function() {
 };
 
 articleView.handleMainNav = function(event) {
-  $('main-nav').on('click', '.tab', function() {
+  $('.main-nav').on('click', '.tab', function() {
+    var selectedContent = $(this).data('content');
     $('.tab-content').hide();
     event.preventDefault();
-
-    var selectedContent = $(this).data('content');
     $('#' + $selectedContent).fadeIn('slow');
   });
-  $('main-nav .tab:first').click();
+
+  $('.main-nav .tab:first').click();
 };
+
+articleView.populateFilters();
+articleView.handleCategoryFilter();
+articleView.handleMainNav();
